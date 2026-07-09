@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://rent-flatmate-finder-08wf.onrender.com/api",
+    baseURL: "http://127.0.0.1:8000/api",
 });
 
 // Add JWT token automatically

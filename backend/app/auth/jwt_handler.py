@@ -18,15 +18,16 @@ def create_access_token(data: dict):
 
 
 def verify_token(token: str):
-
     try:
-
-        return jwt.decode(
+        payload = jwt.decode(
             token,
             settings.SECRET_KEY,
             algorithms=[settings.ALGORITHM]
         )
+        print("DECODED PAYLOAD:", payload)
+        return payload
 
-    except JWTError:
-
+    except JWTError as e:
+        print("JWT ERROR:", e)
         return None
+        
